@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>అరుణాచలం శివ హోటల్</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans Telugu",Arial,sans-serif;background:#fff8e8;color:#263b22}header{background:#244b2a;color:#fff4d4;text-align:center;padding:28px 12px}header h1{margin:0;font-size:clamp(25px,5vw,40px)}header p{margin-bottom:0}.hero{padding:32px 16px;text-align:center;background:linear-gradient(135deg,#fff1c9,#e4edcf)}.hero h2{font-size:28px}.hero p{line-height:1.9}.section{padding:22px 14px;max-width:1000px;margin:auto}.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.item{background:white;border:1px solid #e2d2a9;border-radius:16px;padding:18px;box-shadow:0 5px 14px #503b1510}.food{font-size:42px}.item h3{margin:8px 0}.price{font-size:22px;color:#a35b10;font-weight:bold}.item button,button{background:#2e6534;color:white;border:0;padding:11px 15px;border-radius:9px;cursor:pointer;font-size:16px}.item button{margin-top:8px}.cart{background:#f0e5c8;padding:18px;border-radius:14px}.cartrow{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #d6c59f;padding:10px 0}.cartrow button{padding:5px 10px;margin:2px}input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #c8b88e;border-radius:8px;font:inherit}footer{text-align:center;background:#244b2a;color:white;padding:22px;line-height:2}.green{color:#2e6534}
+</style>
+</head>
+<body>
+<header><div style="font-size:35px">🌿 🍽️ 🌿</div><h1>అరుణాచలం శివ హోటల్</h1><p>మన ఇంటి రుచి… మీ ఇంటి వరకు!</p></header>
+<section class="hero"><h2>సంప్రదాయ ఆంధ్ర వంటకాల ఆత్మీయ స్వాగతం</h2><p>కట్టెల పొయ్యి రుచులు • తాజా పదార్థాలు • సరసమైన ధరలు</p><a href="#menu"><button>ఆహార మెనూ చూడండి</button></a></section>
+<section class="section" id="menu"><h2>🍃 మా ఆహార మెనూ</h2><div class="menu" id="items"></div></section>
+<section class="section" id="cart"><h2>🛒 మీ కార్ట్</h2><div class="cart"><div id="cartitems">మీ కార్ట్ ఖాళీగా ఉంది.</div><h3 id="total">మొత్తం: ₹0</h3><button onclick="checkout()">WhatsApp ద్వారా ఆర్డర్ చేయండి</button></div><div id="details" hidden><h3>ఆర్డర్ వివరాలు</h3><label>మీ పేరు</label><input id="customer" placeholder="మీ పేరు"><label>ఫోన్ నంబర్</label><input id="phone" placeholder="మీ ఫోన్ నంబర్"><label>ఆర్డర్ రకం</label><select id="type" onchange="document.getElementById('addressbox').hidden=this.value!=='డెలివరీ'"><option>పార్శిలు</option><option>డైన్-ఇన్</option><option>డెలివరీ</option></select><div id="addressbox" hidden><label>డెలివరీ చిరునామా</label><textarea id="address"></textarea></div><button onclick="sendOrder()">ఆర్డర్ WhatsAppలో పంపండి</button></div></section>
+<section class="section"><h2>మా గురించి</h2><p style="line-height:2">అరుణాచలం శివ హోటల్లో రుచికరమైన ఆహారాన్ని సరసమైన ధరలకు అందించడమే మా లక్ష్యం. సంప్రదాయ రుచులు, నాణ్యమైన పదార్థాలు, ఆత్మీయమైన సేవతో మీకు మంచి భోజన అనుభవాన్ని అందించడానికి మేము కృషి చేస్తాము.</p><p>🔥 కట్టెల పొయ్యి రుచులు　🍃 అరటి ఆకులో వడ్డన　🌾 నాణ్యమైన పదార్థాలు　💚 ఆత్మీయమైన సేవ</p></section>
+<section class="section"><h2>సంప్రదించండి</h2><p>📍 కొటాల గ్రామం, సచివాలయం వీధి, తంబళ్లపల్లి, అన్నమయ్య జిల్లా, ఆంధ్రప్రదేశ్ – 517418</p><p>🕕 సమయం: ఉదయం 6:00 నుండి రాత్రి 10:30 వరకు</p><p>ఫోన్ మరియు WhatsApp ఆర్డర్ల కోసం యజమాని సరైన నంబర్‌ను జోడించాలి.</p></section>
+<footer>🙏 అరుణాచలం శివ హోటల్ 🙏<br>100% శాకాహార వంటకాలు<br>మీ ఆదరణకు ధన్యవాదాలు!</footer>
+<script>
+const foods=[{name:"దోసె",price:10,emoji:"🥞",desc:"కట్టెల పొయ్యి శైలి దోసె"},{name:"కారం దోసె",price:10,emoji:"🌶️",desc:"రుచికరమైన ఎర్ర కారం"},{name:"ఉల్లిపాయ దోసె",price:20,emoji:"🧅",desc:"ఉల్లిపాయలతో కరకరలాడే దోసె"},{name:"నెయ్యి దోసె",price:30,emoji:"🧈",desc:"నెయ్యి సువాసనతో"},{name:"పూరి",price:10,emoji:"🫓",desc:"బంగారు వర్ణంలో పొంగిన పూరి"},{name:"చపాతీ",price:20,emoji:"🫓",desc:"మృదువైన గోధుమ చపాతీ"},{name:"రైస్ ఐటమ్స్",price:60,emoji:"🍚",desc:"అన్నం, పప్పు, రసం, కూర, పెరుగుతో"},{name:"రాగిముద్ద",price:30,emoji:"🍲",desc:"రాయలసీమ సంప్రదాయ రుచి"}];
+let cart={};const fmt=n=>"₹"+n;
+document.getElementById("items").innerHTML=foods.map((f,i)=>'<article class="item"><div class="food">'+f.emoji+'</div><h3>'+f.name+'</h3><p>'+f.desc+'</p><div class="price">'+fmt(f.price)+'</div><button onclick="add('+i+')">కార్టులో చేర్చండి</button></article>').join("");
+function add(i){cart[i]=(cart[i]||0)+1;render()}
+function change(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];render()}
+function render(){let keys=Object.keys(cart);document.getElementById("cartitems").innerHTML=keys.length?keys.map(i=>'<div class="cartrow"><span>'+foods[i].name+'<br>'+fmt(foods[i].price)+' × '+cart[i]+'</span><span><button onclick="change('+i+',-1)">−</button><button onclick="change('+i+',1)">+</button><button onclick="change('+i+',-'+cart[i]+')">తొలగించు</button></span></div>').join(""):"మీ కార్ట్ ఖాళీగా ఉంది.";document.getElementById("total").textContent="మొత్తం: "+fmt(keys.reduce((s,i)=>s+foods[i].price*cart[i],0))}
+function checkout(){if(!Object.keys(cart).length){alert("ముందుగా ఆహారాన్ని కార్టులో చేర్చండి");return}document.getElementById("details").hidden=false;document.getElementById("details").scrollIntoView({behavior:"smooth"})}
+function sendOrder(){if(!document.getElementById("customer").value.trim()||!document.getElementById("phone").value.trim()){alert("దయచేసి మీ పేరు, ఫోన్ నంబర్ నమోదు చేయండి");return}let msg="🙏 అరుణాచలం శివ హోటల్ ఆర్డర్ 🙏%0A";Object.keys(cart).forEach(i=>{msg+="%0A"+foods[i].name+" - "+foods[i].price+" × "+cart[i]+" = ₹"+foods[i].price*cart[i]});let total=Object.keys(cart).reduce((s,i)=>s+foods[i].price*cart[i],0);msg+="%0A%0Aమొత్తం: ₹"+total+"%0Aపేరు: "+document.getElementById("customer").value+"%0Aఫోన్: "+document.getElementById("phone").value+"%0Aఆర్డర్ రకం: "+document.getElementById("type").value;if(document.getElementById("type").value==="డెలివరీ")msg+="%0Aచిరునామా: "+document.getElementById("address").value;msg+="%0Aదయచేసి నా ఆర్డర్‌ను ధృవీకరించండి.";alert("హోటల్ WhatsApp నంబర్ ఇంకా జోడించలేదు. ముందుగా యజమాని నంబర్‌ను కోడ్‌లో జోడించాలి.");}
+</script>
+</body>
+</html>
